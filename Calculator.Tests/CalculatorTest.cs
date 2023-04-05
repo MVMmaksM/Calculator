@@ -23,5 +23,26 @@ namespace Calculator.Tests
             var calculatorTest = new Calculator();
             Assert.That(calculatorTest.Substraction(300, 20) == 280);
         }
+
+        [Test]
+        public void MultiplicationReturnsCorrectValue2() 
+        {
+            var calculatorTest = new Calculator();
+            Assert.That(calculatorTest.Multiplication(10,20)==200);
+        }
+
+        [Test]
+        public void DivisionReturnsCorrectValue3() 
+        { 
+            var calculatorTest = new Calculator();
+            Assert.That(calculatorTest.Division(100, 10) == 10);
+        }
+
+        [Test]
+        public void DivisionMustThrowException() 
+        {
+            var calculatorTest = new Calculator();
+            Assert.Throws<DivideByZeroException>(() => calculatorTest.Division(100, 0));
+        }
     }
 }
